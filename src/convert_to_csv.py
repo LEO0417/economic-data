@@ -37,6 +37,17 @@ def convert_dta_to_csv(input_file, output_file):
         print(f"转换过程中出现错误: {str(e)}")
         return False
 
+def ensure_output_directory(output_file):
+    """
+    确保输出目录存在，如果不存在则创建
+    
+    参数:
+    output_file (str): 输出文件的路径
+    """
+    output_dir = os.path.dirname(output_file)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
 def main():
     """主函数"""
     # 设置文件路径
@@ -48,6 +59,9 @@ def main():
         print(f"错误: 找不到输入文件 {input_file}")
         print("请先运行 random_sample.py 生成样本数据")
         return
+    
+    # 确保输出目录存在
+    ensure_output_directory(output_file)
     
     print("=" * 50)
     print("Stata到CSV格式转换工具")
