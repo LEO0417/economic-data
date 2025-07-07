@@ -124,6 +124,9 @@ dmypy.json
 data/*.dta
 data/*.csv
 
+# 例外：允许跟踪样本数据文件
+!data/政府补贴数据_样本.dta
+
 # 临时输出文件
 output/*.png
 output/*.jpg
