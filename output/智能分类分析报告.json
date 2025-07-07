@@ -1,0 +1,15 @@
+{
+  "total_samples": 685,
+  "category_distribution": {
+    "Employment": 62,
+    "General_Business": 284,
+    "R&D_Innovation": 175,
+    "Industrial_Equipment": 64,
+    "Unknown": 82,
+    "Environment": 14,
+    "Other": 4
+  },
+  "average_confidence": 0.878609705777161,
+  "high_confidence_samples": 600,
+  "low_confidence_samples": 82
+}
