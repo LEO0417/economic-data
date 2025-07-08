@@ -401,6 +401,7 @@ def main():
     # 加载数据
     print("📁 加载数据...")
     df = pd.read_csv('../政府补贴数据_样本.csv')
+    df.columns = ['Stkcd', 'Year', 'Fn05601', 'Fn05602', '合计', '政府补贴', 'Sum', 'test', 'Test']
     
     print(f"   数据形状: {df.shape}")
     print(f"   标签分布:")
