@@ -10,8 +10,8 @@ import os
 def verify_sample_data():
     """验证样本数据"""
     
-    sample_file = "../data/政府补贴数据_样本.dta"
-    original_file = "../data/政府补贴数据.dta"
+    sample_file = "data/政府补贴数据_样本.dta"
+    original_file = "data/政府补贴数据.dta"
     
     if not os.path.exists(sample_file):
         print(f"错误: 找不到样本文件 {sample_file}")

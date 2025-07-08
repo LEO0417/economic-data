@@ -51,8 +51,8 @@ def ensure_output_directory(output_file):
 def main():
     """主函数"""
     # 设置文件路径
-    input_file = "../data/政府补贴数据_样本.dta"
-    output_file = "../output/政府补贴数据_样本.csv"
+    input_file = "data/政府补贴数据_样本.dta"
+    output_file = "output/3_政府补贴数据_样本.csv"
     
     # 检查输入文件是否存在
     if not os.path.exists(input_file):

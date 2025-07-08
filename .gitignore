@@ -128,7 +128,7 @@ data/*.csv
 !data/政府补贴数据_样本.dta
 
 # 临时输出文件
-output/*.png
+# output/*.png  # 注释掉，保留分析图表
 output/*.jpg
 output/*.jpeg
 output/*.pdf

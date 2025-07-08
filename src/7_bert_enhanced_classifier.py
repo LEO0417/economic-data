@@ -364,7 +364,7 @@ class AdvancedSubsidyClassifier:
         axes[1,1].set_ylabel('贡献次数')
         
         plt.tight_layout()
-        plt.savefig('../output/advanced_ml_analysis.png', dpi=300, bbox_inches='tight')
+        plt.savefig('output/7_advanced_ml_analysis.png', dpi=300, bbox_inches='tight')
         plt.show()
         
         return fig
@@ -436,7 +436,7 @@ def main():
     
     # 加载数据
     print("📁 加载数据...")
-    df = pd.read_csv('../政府补贴数据_样本.csv')
+    df = pd.read_csv('output/3_政府补贴数据_样本.csv')
     df.columns = ['Stkcd', 'Year', 'Fn05601', 'Fn05602', '合计', '政府补贴', 'Sum', 'test', 'Test']
     print(f"   数据形状: {df.shape}")
     
@@ -464,10 +464,10 @@ def main():
     # 保存结果
     print("\n💾 保存分析结果...")
     result_df = analysis['result_dataframe']
-    result_df.to_csv('../output/政府补贴数据_智能分类结果.csv', index=False)
+    result_df.to_csv('output/7_政府补贴数据_智能分类结果.csv', index=False)
     
     # 保存详细分析报告
-    with open('../output/智能分类分析报告.json', 'w', encoding='utf-8') as f:
+    with open('output/7_智能分类分析报告.json', 'w', encoding='utf-8') as f:
         # 移除不能序列化的对象
         serializable_analysis = {
             'total_samples': analysis['total_samples'],
@@ -495,9 +495,9 @@ def main():
         print(f"   '{text}' -> {category_name} (置信度: {result['confidence']:.2%})")
     
     print("\n✅ 分析完成！结果已保存到:")
-    print("   - output/政府补贴数据_智能分类结果.csv")
-    print("   - output/智能分类分析报告.json")
-    print("   - output/advanced_ml_analysis.png")
+    print("   - output/7_政府补贴数据_智能分类结果.csv")
+    print("   - output/7_智能分类分析报告.json")
+    print("   - output/7_advanced_ml_analysis.png")
 
 if __name__ == "__main__":
     main()

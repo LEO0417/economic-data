@@ -55,7 +55,7 @@ def random_sample_dta(input_file, output_file, sample_ratio=0.001):
             print(f"已重命名 {len(column_mapping)} 个包含中文的列名")
             
             # 保存列名映射到文件
-            mapping_file = "../config/" + os.path.basename(output_file).replace('.dta', '_列名映射.txt')
+            mapping_file = "config/" + os.path.basename(output_file).replace('.dta', '_列名映射.txt')
             with open(mapping_file, 'w', encoding='utf-8') as f:
                 f.write("原始列名 -> 新列名\n")
                 f.write("=" * 30 + "\n")
@@ -117,8 +117,8 @@ def main():
     """主函数"""
     
     # 设置文件路径（相对于项目根目录）
-    input_file = "../data/政府补贴数据.dta"
-    output_file = "../data/政府补贴数据_样本.dta"
+    input_file = "data/政府补贴数据.dta"
+    output_file = "data/政府补贴数据_样本.dta"
     
     # 检查输入文件是否存在
     if not os.path.exists(input_file):

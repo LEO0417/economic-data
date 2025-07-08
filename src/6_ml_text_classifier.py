@@ -305,7 +305,7 @@ class SubsidyTextClassifier:
         
         print(f"\n📋 {best_model_name} 详细分类报告:")
         print("-" * 50)
-        class_names = self.label_encoder.classes_
+        class_names = [str(x) for x in self.label_encoder.classes_]
         print(classification_report(y_test, y_pred, target_names=class_names))
         
         return results
@@ -390,7 +390,7 @@ class SubsidyTextClassifier:
             plt.title('特征重要性')
         
         plt.tight_layout()
-        plt.savefig('../output/ml_classification_results.png', dpi=300, bbox_inches='tight')
+        plt.savefig('output/6_ml_classification_results.png', dpi=300, bbox_inches='tight')
         plt.show()
 
 def main():
@@ -400,7 +400,7 @@ def main():
     
     # 加载数据
     print("📁 加载数据...")
-    df = pd.read_csv('../政府补贴数据_样本.csv')
+    df = pd.read_csv('output/3_政府补贴数据_样本.csv')
     df.columns = ['Stkcd', 'Year', 'Fn05601', 'Fn05602', '合计', '政府补贴', 'Sum', 'test', 'Test']
     
     print(f"   数据形状: {df.shape}")
@@ -446,11 +446,11 @@ def main():
     df['ml_prediction_cn'] = [classifier.category_mapping.get(pred, pred) for pred in all_predictions]
     
     # 保存结果
-    df.to_csv('../output/政府补贴数据_ML分类结果.csv', index=False)
+    df.to_csv('output/6_政府补贴数据_ML分类结果.csv', index=False)
     
     print("✅ 分析完成！结果已保存到:")
-    print("   - output/政府补贴数据_ML分类结果.csv")
-    print("   - output/ml_classification_results.png")
+    print("   - output/6_政府补贴数据_ML分类结果.csv")
+    print("   - output/6_ml_classification_results.png")
 
 if __name__ == "__main__":
     main()

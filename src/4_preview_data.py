@@ -8,7 +8,7 @@
 import pandas as pd
 import os
 
-def preview_csv(filename='../output/政府补贴数据_样本.csv'):
+def preview_csv(filename='output/3_政府补贴数据_样本.csv'):
     """预览CSV文件"""
     if not os.path.exists(filename):
         print(f"❌ 文件 {filename} 不存在")

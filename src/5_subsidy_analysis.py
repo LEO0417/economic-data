@@ -16,7 +16,7 @@ import re
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Arial Unicode MS', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
 
-def load_data(filename='../output/政府补贴数据_样本.csv'):
+def load_data(filename='output/3_政府补贴数据_样本.csv'):
     """加载数据"""
     df = pd.read_csv(filename)
     return df
@@ -199,7 +199,7 @@ def create_visualizations(df, category_stats, yearly_stats):
     axes[1,1].set_title('test vs Test 交叉分布')
     
     plt.tight_layout()
-    plt.savefig('../output/subsidy_analysis.png', dpi=300, bbox_inches='tight')
+    plt.savefig('output/5_subsidy_analysis.png', dpi=300, bbox_inches='tight')
     plt.show()
 
 def main():
@@ -223,15 +223,15 @@ def main():
     create_visualizations(df, category_stats, yearly_stats)
     
     # 保存分析结果
-    df.to_csv('../output/政府补贴数据_分析结果.csv', index=False)
-    category_stats.to_csv('../output/补贴类别统计.csv')
-    yearly_stats.to_csv('../output/年度补贴统计.csv')
+    df.to_csv('output/5_政府补贴数据_分析结果.csv', index=False)
+    category_stats.to_csv('output/5_补贴类别统计.csv')
+    yearly_stats.to_csv('output/5_年度补贴统计.csv')
     
     print("✅ 分析完成！结果已保存到以下文件:")
-    print("   - output/政府补贴数据_分析结果.csv")
-    print("   - output/补贴类别统计.csv") 
-    print("   - output/年度补贴统计.csv")
-    print("   - output/subsidy_analysis.png")
+    print("   - output/5_政府补贴数据_分析结果.csv")
+    print("   - output/5_补贴类别统计.csv") 
+    print("   - output/5_年度补贴统计.csv")
+    print("   - output/5_subsidy_analysis.png")
 
 if __name__ == "__main__":
     main() 
